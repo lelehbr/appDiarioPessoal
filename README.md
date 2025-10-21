@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+Aplicativo mobile de controle de finanças pessoais desenvolvido com React Native, Expo e Supabase na aula de CODIFICAR APLICAÇÕES DISPOSITIVOS MOVEIS.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+📋 Funcionalidades
+✅ Sistema de autenticação (Login e Cadastro)
+✅ Dashboard com resumo financeiro
+✅ Gráficos de receitas e despesas
+✅ Cadastro de receitas e despesas
+✅ Anexar comprovantes
+✅ Gerenciamento de categorias personalizadas
+✅ Listagem e filtros de transações
+✅ Design responsivo e moderno
+1. Clone e instale as dependências
+# Já está no diretório do projeto
+cd C:\Users\lucas.flores\Documents\appFinancasDespesas
 
-## Get started
+# Instalar dependências
+npm install
+2. Configurar o Supabase
+2.1. Criar projeto no Supabase
+Acesse https://supabase.com
+Crie uma conta (se não tiver)
+Clique em "New Project"
+Preencha os dados:
+Name: app-financas (ou o nome que preferir)
+Database Password: Crie uma senha forte
+Region: Escolha a região mais próxima
+Aguarde a criação do projeto (pode levar alguns minutos)
+2.2. Executar o Schema SQL
+No painel do Supabase, vá em SQL Editor (menu lateral)
+Clique em New Query
+Copie todo o conteúdo do arquivo supabase-schema.sql
+Cole no editor SQL
+Clique em Run (ou pressione Ctrl+Enter)
+Aguarde a execução (deve aparecer "Success")
+2.3. Configurar as credenciais no app
+No painel do Supabase, vá em Settings > API
 
-1. Install dependencies
+Copie as seguintes informações:
 
-   ```bash
-   npm install
-   ```
+Project URL (algo como: https://xxxxx.supabase.co)
+anon public key (uma chave longa)
+Abra o arquivo src/config/supabase.js
 
-2. Start the app
+Substitua as variáveis:
 
-   ```bash
-   npx expo start
-   ```
+const SUPABASE_URL = 'https://xxxxx.supabase.co'; // Cole sua URL aqui
+const SUPABASE_ANON_KEY = 'sua-anon-key-aqui'; // Cole sua chave aqui
+4. Executar o aplicativo
+# Iniciar o Expo
+npm start
 
-In the output, you'll find options to open the app in a
+# Ou para plataformas específicas:
+npm run android  # Para Android
+npm run ios      # Para iOS (apenas no macOS)
+5. Testar no dispositivo
+Instale o app Expo Go no seu celular:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Android - Google Play
+iOS - App Store
+Escaneie o QR Code que aparece no terminal ou navegador
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+O app será carregado no seu dispositivo!
